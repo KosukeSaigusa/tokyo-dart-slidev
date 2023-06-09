@@ -4,430 +4,458 @@ background: https://source.unsplash.com/collection/94734566/1920x1080
 class: text-center
 highlighter: shiki
 lineNumbers: false
-info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
+info: 東京.dart Dart/Flutter のOSS 活動・pub パッケージ開発のすすめ
 drawings:
   persist: false
 transition: slide-left
-title: Welcome to Slidev
+title: 東京.dart (KosukeSaigusa)
 ---
 
-# Welcome to Slidev
+# Dart/Flutter の<br>OSS 活動・pub パッケージ<br>開発のすすめ
 
-Presentation slides for developers
+東京.dart (2023-06-09)
 
-<div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
-  </span>
+---
+
+# 自己紹介
+
+<div grid="~ cols-2 gap-2" m="-t-2">
+
+<ul>
+  <li>Flutter/Dart 歴 3 年くらい</li>
+  <li>本業：Web エンジニア（atama plus株式会社、Django, Python, React, Angular, TypeScript など）</li>
+  <li>副業・個人事業：主に Flutter, Dart（某ガソリンスタンドのアプリなど）</li>
+  <li>趣味・個人開発：Flutter, Dart が大好き、Firebase も好き</li>
+  <li>好きな技術・よく使う技術：Flutter, Dart, Firebase, Django, Python, React, Vue, Angular, Next, Nuxt, TypeScript, Chakra UI, Tailwind CSS, LINE API, LIFF, ...</li>
+</ul>
+
+<div class="flex items-center justify-center">
+  <div>
+    <img border="rounded" src="/images/profile_qr_code.png" class="pb-1">
+    <div class="text-center">@KosukeSaigusa</div>
+  </div>
 </div>
 
-<div class="abs-br m-6 flex gap-2">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub"
-    class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-logo-github />
-  </a>
 </div>
 
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
-
----
-transition: fade-out
----
-
-# What is Slidev?
-
-Slidev is a slides maker and presenter designed for developers, consist of the following features
-
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
-
-<br>
-<br>
-
-Read more about [Why Slidev?](https://sli.dev/guide/why)
-
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
-
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
-
-<!--
-Here is another comment.
--->
 
 ---
 layout: default
 ---
 
-# Table of contents
+# 本日の発表について...
 
-```
-<Toc minDepth="1" maxDepth="5"></Toc>
-```
-
-<Toc></Toc>
-
----
-transition: slide-up
-
-level: 2
----
-
-# Navigation
-
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
-
-### Keyboard Shortcuts
-
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
-
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
-
----
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
----
-
-# Code
-
-Use code snippets and get the highlighting directly![^1]
-
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
-
-function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = { ...user, ...update }
-  saveUser(id, newUser)
-}
-```
-
-<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
-
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
-
-<style>
-.footnotes-sep {
-  @apply mt-20 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
-
----
-
-# Components
-
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
+<div style="margin-top: 4rem;">
+  <h3 style="font-weight: bold;">「OSS 活動のすすめ」</h3>
+  <p style="font-size: 1.25rem; line-height: 2rem;">と、銘打っていますが、私も全然 OSS 初心者です！</p>
+  <p style="font-size: 1.25rem; line-height: 2rem;">が、これまでの私の OSS との関り方や作ったものを紹介しながら、その楽しさを共有したり、皆さんと繋がるきっかけになったりすれば嬉しいです！🙌</p>
 </div>
 
-<!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
-
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
--->
-
-
----
-class: px-20
 ---
 
-# Themes
+# これまでの（広義の）OSS 活動
 
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
+- 個人開発のリポジトリをたくさん作って公開する
+  - Flutter や Dart の気になる機能やパッケージを使ったレファレンスコード・アプリ
+  - ハッカソンで開発したアプリ、その他の遊びで作ったアプリ
+- 既存の OSS パッケージに（ちょっとでも）Contribute する
+  - バグっぽい現象を見つけたら Issue で報告
+  - README のタイポや翻訳関係でも貢献
+  - Flutter/Dart SDK の新しい機能が出たらそれを使ってリファクタ
+- これまで（小さい）Contribute したことがある主なパッケージ
+  - [geoflutterfire](https://pub.dev/packages/geoflutterfire)
+  - [wechat_assets_picker](https://pub.dev/packages/wechat_assets_picker)
+  - [supabase_auth_ui](https://pub.dev/packages/supabase_auth_ui)
+  - ... など
+
+---
+
+# 公開した pub パッケージ
+
+最近公開したパッケージをかんたんに紹介します！
 
 <div grid="~ cols-2 gap-2" m="-t-2">
 
-```yaml
----
-theme: default
----
-```
+[geoflutterfire_plus](https://pub.dev/packages/geoflutterfire_plus)
 
-```yaml
----
-theme: seriph
----
-```
+[flutterfire_json_converters](https://pub.dev/packages/flutterfire_json_converters)
 
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
+<img border="rounded" src="/images/geoflutterfire_plus.png">
 
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
+<img border="rounded" src="/images/flutterfire_json_converters.png">
 
 </div>
 
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
-
----
-preload: false
 ---
 
-# Animations
+# geoflutterfire_plus
 
-Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
-</div>
-```
-
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-    />
+<div class="grid grid-cols-4">
+  <div class="col-span-3 p-4 overflow-auto">
+    <ul>
+      <li>Cloud Firestore の Geo query をかんたんに書くためのパッケージ</li>
+      <li>既存の geoflutterfire パッケージの後継として開発</li>
+      <li>現時点で 15 ヶ月間、依存パッケージの更新（メンテナンス）がされなくなって、使用できなくなっていた</li>
+      <li>設計や内部実装にいろいろ問題があり、自分で大部分を書き換えてフォーク版として使っていた</li>
+      <li>設計を根本から見直して、同じ機能を維持しつつ、いくつかの機能や重要なユニットテストの追加をした</li>
+    </ul>
   </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
+  <div class="col-span-1">
+    <img src="/images/geoflutterfire_plus.gif" class="object-cover h-full w-full">
   </div>
 </div>
 
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
+---
 
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
+# geoflutterfire_plus
 
-[Learn More](https://sli.dev/guide/animations.html#motion)
+Geo query, Geohash について
+
+- Cloud Firestore では複合クエリごとに 1 つの range 句のみしか使用できない
+- よって、緯度・経度を別々のフィールドに保存して `minLat < latitude < maxLat` かつ `minLng < longitude < maxLng` のようなクエリは書けない
+- そこで、緯度経度の値の組を文字列に変換して扱う仕組みである Geohash が用いられる
+  - ある地点の緯度・経度をひとつの文字列として扱う
+  - 物理的地点が近ければ、Geohash 文字列も近くなる（アルゴリズムを追えば理由は分かる）
+    - 例）東京駅: `xn76urx6`, 新宿駅: `xn774cnf`, 博多駅: `wvuxpfc6`
+
+---
+
+# Geohash の計算
+
+`GeoFirePoint` というクラスを導入。緯度・経度を与えるだけで、勝手に Geohash を計算してくれる。
+
+```dart
+/// 緯度・経度を与えて [GeoFirePoint] を定義する。
+final GeoFirePoint geoFirePoint = GeoFirePoint(GeoPoint(35.681236, 139.767125));
+
+/// GeoFirePoint.data で、[GeoPoint] インスタンスと Geohash 文字列が得られる。
+final Map<String, dynamic> data = geoFirePoint.data;
+
+// {geopoint: Instance of 'GeoPoint', geohash: xn76urx66}
+print(data);
+
+// 'xn76urx66'
+print(data['geohash']);
+```
+
+---
+
+# 位置情報データを Cloud Firestore に保存する
+
+`CollectionReference` を与えて得られる `GeoCollectionReference` を `CollectionReference` と（ほぼ）同様に扱える。
+
+```dart
+/// 緯度・経度を与えて [GeoFirePoint] を定義する。
+final geoFirePoint = GeoFirePoint(GeoPoint(35.681236, 139.767125));
+
+/// [CollectionReference] の定義。
+final collectionReference = FirebaseFirestore.instance.collection('locations');
+
+/// [CollectionReference] を与えて [GeoCollectionReference] を定義する。
+final geoCollectionReference = GeoCollectionReference<Map<String, dynamic>>(collectionReference);
+
+/// [CollectionReference<T>] に [T] 型がついていれば [GeoCollectionReference<T>] も型付きで扱える。
+final typedGeoCollectionReference = GeoCollectionReference<Location>(typedCollectionReference);
+
+/// GeoCollectionReference.add メソッドで位置情報ドキュメントを作成する。
+/// GeoFirePoint.data を任意のフィールド名で含める。
+/// その他のフィールドも自由に設定して良い。
+geoCollectionReference.add(<String, dynamic>{
+  'geo': geoFirePoint.data,
+  'name': name,
+  'isVisible': true,
+});
+```
+
+---
+
+# 位置情報データを取得する
+
+それぞれ `Stream`, `Future` を返す 2 種類のメソッドを提供している。
+
+検出中心や半径 (km) を変更するたびに結果を返す `subscribeWithin` メソッド:
+
+```dart
+final Stream<List<DocumentSnapshot<Location>> stream = 
+  typedGeoCollectionReference.subscribeWithin(
+    center: GeoFirePoint(GeoPoint(35.681236, 139.767125)),
+    radiusInKm: 50,
+    field: 'geo',
+    geopointFrom: location.geo.geopoint,
+  );
+```
+
+ 任意のリクエストしたタイミングで結果を返す `fetchWithin` メソッド:
+
+```dart
+final Future<List<DocumentSnapshot<Location>> future = 
+  typedGeoCollectionReference.fetchWithin(
+    center: GeoFirePoint(GeoPoint(35.681236, 139.767125)),
+    radiusInKm: 50,
+    field: 'geo',
+    geopointFrom: location.geo.geopoint,
+  );
+```
+
+---
+
+# flutterfire_json_converters
+
+<div grid="~ cols-2 gap-2" m="-t-2">
+
+- Dart 3 に実装された `sealed` クラスを早速活用
+- Dart の `DateTime` 型と Cloud Firestore の `Timestamp` 型を一緒に扱うための `JsonConverter` を定義
+- さらに、書き込み (`create`/`update`) 時には `FieldValue.serverTimestamp()` を自動で付加する
+- Dart 3 以前は freezed パッケージの Union/Sealed を使用していた
+- 参考：[json_converter_helper](https://pub.dev/packages/json_converter_helper)
+
+<img border="rounded" src="/images/freezed_union_sealed.png">
 
 </div>
 
 ---
 
-# LaTeX
+# 実装内容
 
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
+sealed クラスの活用
 
-<br>
+<div grid="~ cols-2 gap-2" m="-t-2">
 
-Inline $\sqrt{3x-1}+(1+x)^2$
+```dart
+/// sealed クラスで定義したタイムスタンプ。
+sealed class SealedTimestamp {
+  const SealedTimestamp();
 
-Block
-$$
-\begin{array}{c}
-
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
-
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-
-\nabla \cdot \vec{\mathbf{B}} & = 0
-
-\end{array}
-$$
-
-<br>
-
-[Learn more](https://sli.dev/guide/syntax#latex)
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-3 gap-10 pt-4 -mb-6">
-
-```mermaid {scale: 0.5}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```mermaid
-mindmap
-  root((mindmap))
-    Origins
-      Long history
-      ::icon(fa fa-book)
-      Popularisation
-        British popular psychology author Tony Buzan
-    Research
-      On effectivness<br/>and features
-      On Automatic creation
-        Uses
-            Creative techniques
-            Strategic planning
-            Argument mapping
-    Tools
-      Pen and paper
-      Mermaid
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
+  DateTime? get dateTime {
+    return switch (this) {
+      ClientDateTime(
+        clientDateTime: final clientDateTime
+      ) =>
+        clientDateTime,
+      ServerTimestamp() => null,
+    };
   }
 }
+```
 
+```dart
+/// クライアントの Dart の [DateTime].
+class ClientDateTime extends SealedTimestamp {
+  const ClientDateTime(this.clientDateTime);
 
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
+  final DateTime clientDateTime;
+}
 
-@enduml
+/// Cloud Firestore の `FieldValue.serverTimestamp`.
+class ServerTimestamp extends SealedTimestamp {
+  const ServerTimestamp();
+}
 ```
 
 </div>
 
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
-
----
-src: ./pages/multiple-entries.md
-hide: false
 ---
 
+# 実装内容
+
+<div grid="~ cols-2 gap-2" m="-t-2">
+
+```dart
+const sealedTimestampConverter =
+    _SealedTimestampConverter();
+
+const alwaysUseServerTimestampSealedTimestampConverter =
+    _SealedTimestampConverter(
+  alwaysUseServerTimestamp: true,
+);
+
+class _SealedTimestampConverter
+    implements JsonConverter<SealedTimestamp, Object> {
+  const _SealedTimestampConverter({
+    this.alwaysUseServerTimestamp = false,
+  });
+
+  final bool alwaysUseServerTimestamp;
+
+  // ... 省略（右側参照）
+}
+```
+
+```dart
+{
+  // ... 省略
+
+  @override
+  SealedTimestamp fromJson(Object json) {
+    final timestamp = json as Timestamp;
+    return ClientDateTime(timestamp.toDate());
+  }
+
+  @override
+  Object toJson(SealedTimestamp sealedTimestamp) {
+    if (alwaysUseServerTimestamp) {
+      return FieldValue.serverTimestamp();
+    }
+    return switch (sealedTimestamp) {
+      ClientDateTime(
+        clientDateTime: final clientDateTime
+      ) =>
+        Timestamp.fromDate(clientDateTime),
+      ServerTimestamp() => FieldValue.serverTimestamp(),
+    };
+  }
+}
+```
+
+</div>
+
 ---
-layout: center
-class: text-center
+layout: two-cols
 ---
 
-# Learn More
+# 使い方
 
-[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
+<div style="padding-right: 4rem;">
+  <ul>
+    <li>json_serializable や freezed のフィールド定義時の json_converter として使用</li>
+    <li>読み込み時: Cloud Firestore の <code>TimeStamp</code> を Dart の <code>DateTime</code> に変換</li>
+    <li>書き込み時
+      <ul>
+        <li><code>createdAt</code>: クライアントから Dart の <code>DateTime</code> を与えればそれを <code>Timestamp</code> に変換。与えられなければ自動で <code>FieldValue.serverTimestamp()</code></li>
+        <li><code>updatedAt</code>: 自動で常に <code>FieldValue.serverTimestamp()</code></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+::right::
+
+```dart
+@JsonSerializable()
+class Entity {
+  Entity({
+    this.createdAt = const ServerTimestamp(),
+    this.updatedAt = const ServerTimestamp(),
+  });
+
+  factory Entity.fromJson(Map<String, dynamic> json) =>
+      _$EntityFromJson(json);
+
+  @sealedTimestampConverter
+  final SealedTimestamp createdAt;
+
+  @alwaysUseServerTimestampSealedTimestampConverter
+  final SealedTimestamp updatedAt;
+
+  Map<String, dynamic> toJson() => _$EntityToJson(this);
+}
+```
+
+```dart
+test('test', () {
+  final epoch = DateTime(1970);
+  final entity = Entity(createdAt: ClientDateTime(epoch));
+  final json = entity.toJson();
+  expect(json['createdAt'], Timestamp.fromDate(epoch));
+  expect(json['updatedAt'], isA<FieldValue>());
+});
+```
+
+---
+
+# 今後やってみたいこと
+
+Cloud Firestore のドキュメントのクラス定義と `CollectionReference`, `DocumentReference` を自動生成する仕組みを作りたい（freezed の FlutterFire 特化、Cloud Firestore ODM よりもシンプルで柔軟なもの）
+
+<div grid="~ cols-2 gap-2" m="-t-2">
+
+```dart
+@freezed
+class Foo with _$Foo {
+  const factory Foo({
+    @Default('') String fooId,
+    @Default('') String someField,
+    @sealedTimestampConverter
+    @Default(ServerTimestamp()) SealedTimestamp createdAt,
+  }) = _Foo;
+
+  factory Foo.fromJson(Map<String, dynamic> json) =>
+      _$FooFromJson(json);
+
+  factory Foo.fromDocumentSnapshot(DocumentSnapshot ds) {
+    final data = ds.data()! as Map<String, dynamic>;
+    return Foo.fromJson(<String, dynamic>{
+      ...data,
+      'fooId': ds.id,
+    });
+  }
+}
+```
+
+```dart
+final _db = FirebaseFirestore.instance;
+
+/// foos コレクションの参照。
+final foosRef = _db.collection('foos').withConverter(
+  fromFirestore: (ds, _) {
+    return Foo.fromDocumentSnapshot(ds);
+  },
+  toFirestore: (obj, _) {
+    final json = obj.toJson();
+    return json;
+  },
+);
+
+/// foo ドキュメントの参照。
+DocumentReference<Foo> fooRef({required String fooId}) =>
+    foosRef.doc(fooId);
+```
+
+</div>
+
+---
+
+# まとめ
+
+<!--
+- ⚡なぜ OSS をやるの？
+  - 私たちエンジニアにとっての自己表現のひとつ
+  - 自分が作りたいもの、役に立つものを作るのは楽しい
+  - （まだ大きな実績はないけど）それが世界中の人に使われ得るのも楽しい
+- 💡 今日からできる（広義の）OSS 活動
+  - 機会を見つけて、普段使っている pub パッケージのコードを読んだり、Issue や PR を送ったりしてみる
+  - アイディアがまとまれば開発してパッケージをリリースしてみる
+  - （今日のような）オフライン・オンラインの勉強会にも参加してみる
+- ✌️ ぜひ Twitter や GitHub で繋がりましょう！！
+-->
+
+<div grid="~ cols-2 gap-2" m="-t-2">
+
+<ul>
+  <li>
+    ⚡なぜ OSS をやるの？
+    <ul>
+      <li>私たちエンジニアにとっての自己表現のひとつ</li>
+      <li>自分が作りたいもの、役に立つものを作るのは楽しい</li>
+      <li>（まだ大きな実績はないけど）それが世界中の人に使われ得るのも楽しい</li>
+    </ul>
+  </li>
+  <li>
+    💡 今日からできる（広義の）OSS 活動
+    <ul>
+      <li>普段使っている pub パッケージのコードを読んでみる、Issue や PR の作成にも気軽に取り組んでみる</li>
+      <li>オフライン・オンラインの勉強会にも参加してみる</li>
+    </ul>
+  </li>
+  <li>✌️ ぜひ Twitter や GitHub で繋がりましょう！！</li>
+</ul>
+
+<div class="flex items-center justify-center">
+  <div>
+    <img border="rounded" src="/images/profile_qr_code.png" class="pb-1">
+    <div class="text-center">@KosukeSaigusa</div>
+  </div>
+</div>
+
+</div>
+
