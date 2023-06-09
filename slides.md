@@ -13,6 +13,10 @@ title: 東京.dart (KosukeSaigusa)
 
 # Dart/Flutter の<br>OSS 活動・pub パッケージ<br>開発のすすめ
 
+<div class="flex items-center justify-center">
+  <img border="rounded" src="/images/slidev_qr_code.png" class="pb-1">
+</div>
+
 東京.dart (2023-06-09)
 
 ---
